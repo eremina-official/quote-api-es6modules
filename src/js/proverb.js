@@ -1,70 +1,60 @@
-const proverbModule = (function() {
 
-  //cache DOM, declare variables
-  const DOM = {};
-  
-  const proverbArray = [
-    'If you can\'t beat \'em, join \'em',
-    'Don\'t count your chickens before they hatch',
-    'Actions speak louder than words',
-    'The leopard does not change his spots',
-    'A journey of a thousand miles begins with a single step',
-    'Don\'t bite the hand that feeds you',
-    'Don\'t put off until tomorrow what you can do today',
-    'No man is an island',
-    'The early bird gets the worm',
-    'The enemy of my enemy is my friend',
-    'A poor workman always blames his tools',
-    'A person is known by the company he keeps',
-    'Don\'t burn your bridges behind you'
-  ];
+import {loadNextImage} from './background.js';
 
-  const lastProverbIndex = proverbArray.length - 1;
+//cache DOM, declare variables
+const $showQuotes = $('#show-quotes');
+const $showProverbs = $('#show-proverbs');
+const $proverb = $('#proverb');
+const $author = $('#author');
+const $nextQuote = $('#next-quote');
+const $nextProverb = $('#next');
 
-  //private functions
-  function cacheDom() {
-    DOM.$showQuotes = $('#show-quotes');
-    DOM.$showProverbs = $('#show-proverbs');
-    DOM.$proverb = $('#proverb');
-    DOM.$author = $('#author');
-    DOM.$nextQuote = $('#next-quote');
-    DOM.$nextProverb = $('#next');
-  }
-  function bindEvents() {
-    DOM.$showProverbs.on('click', goToProverb);
-    DOM.$nextProverb.on('click', showNextProverb);
-  }
-  function showProverb() {
-    DOM.$proverb.html(proverbArray[0]);
-  }
-  function showNextProverb() {
-    let currentProverb = DOM.$proverb.html();
-    let currentIndex = proverbArray.indexOf(currentProverb);
-    let indexToShow = (currentIndex === lastProverbIndex) ? 0 : currentIndex + 1;
-    DOM.$proverb.html(proverbArray[indexToShow]);
-    backgroundModule.loadNextImage();
-  }
-  function goToProverb() {
-    DOM.$proverb.html('');
-    DOM.$author.html('');
-    DOM.$proverb.addClass('largefont');
-    DOM.$showQuotes.removeClass('active');
-    $(this).addClass('active');
-    DOM.$nextQuote.hide();
-    DOM.$nextProverb.show();
-    showProverb();
-    backgroundModule.loadNextImage();
-  }
+const proverbArray = [
+  'If you can\'t beat \'em, join \'em',
+  'Don\'t count your chickens before they hatch',
+  'Actions speak louder than words',
+  'The leopard does not change his spots',
+  'A journey of a thousand miles begins with a single step',
+  'Don\'t bite the hand that feeds you',
+  'Don\'t put off until tomorrow what you can do today',
+  'No man is an island',
+  'The early bird gets the worm',
+  'The enemy of my enemy is my friend',
+  'A poor workman always blames his tools',
+  'A person is known by the company he keeps',
+  'Don\'t burn your bridges behind you'
+];
 
-  //public functions
-  function init() {
-    cacheDom();
-    bindEvents();
-    showProverb();
-  }
+const lastProverbIndex = proverbArray.length - 1;
 
-  return {
-    init: init
-  };
+//bind events
+$showProverbs.on('click', goToProverb);
+$nextProverb.on('click', showNextProverb);
 
-})(); //proverbModule
+//function declarations
+function showProverb() {
+  $proverb.html(proverbArray[0]);
+}
+
+function showNextProverb() {
+  let currentProverb = $proverb.html();
+  let currentIndex = proverbArray.indexOf(currentProverb);
+  let indexToShow = (currentIndex === lastProverbIndex) ? 0 : currentIndex + 1;
+  $proverb.html(proverbArray[indexToShow]);
+  loadNextImage();
+}
+
+function goToProverb() {
+  $proverb.html('');
+  $author.html('');
+  $proverb.addClass('largefont');
+  $showQuotes.removeClass('active');
+  $(this).addClass('active');
+  $nextQuote.hide();
+  $nextProverb.show();
+  showProverb();
+  loadNextImage();
+}
+
+//functions called on page load
+showProverb();
