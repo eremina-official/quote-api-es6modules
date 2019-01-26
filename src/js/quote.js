@@ -17,17 +17,14 @@ $nextQuote.on('click', showNextQuote);
 function callAjax() {
     $.ajax({
     url: 'https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1',
-    cache: false /* when set to false it forces the requested page not to be cached by the browser */
+    cache: false 
+    /* when set to false it forces the requested page not to be cached by the browser */
   })
   .done(function(responce) {
-    //console.log(responce);
     $proverb.html(responce[0].content);
     $author.html(responce[0].title);
   })
   .fail(function(jqXHR, textStatus, errorThrown) {
-    //console.log(jqXHR);
-    //console.log(textStatus);
-    //console.log(errorThrown);
     $proverb.html('Connection error');
   });
 }
