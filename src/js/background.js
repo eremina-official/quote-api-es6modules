@@ -3,14 +3,18 @@
 const $image = $('#image');
 let uniqueUrl = 1;
 
+//bind events
+$image.on('load', fadeInImage);
+
 //function declarations
 function loadImage() {
-  let source = 'https://source.unsplash.com/1920x1080?nature?sig=' + uniqueUrl; 
+  let source = `https://source.unsplash.com/1920x1080?nature?sig=${uniqueUrl}`; 
   $image.attr('src', source);
   uniqueUrl++;
-  $image.on('load', function() {
-    $(this).fadeIn('600', 'linear');
-  });
+}
+
+function fadeInImage() {
+  $(this).fadeIn('600', 'linear');
 }
 
 function loadNextImage() {
