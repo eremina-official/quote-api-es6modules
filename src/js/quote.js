@@ -18,7 +18,7 @@ function callAjax() {
     $.ajax({
     url: 'https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1',
     cache: false 
-    /* when set to false it forces the requested page not to be cached by the browser */
+    /* when cache set to false it forces the requested page not to be cached by the browser */
   })
   .done(function(responce) {
     $proverb.html(responce[0].content);
