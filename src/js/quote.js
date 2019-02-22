@@ -1,5 +1,5 @@
-
 import {loadNextImage} from './background.js';
+import '../css-style-proverb.css';
 
 //cache DOM
 const $showQuotes = $('#show-quotes');

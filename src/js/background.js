@@ -1,3 +1,5 @@
+import '../css/stylesheet.css';
+import '../css/style-background.css';
 
 //cache DOM, declare variables
 const $image = $('#image');
