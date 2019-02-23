@@ -6,4 +6,4 @@ The modules are written with ES6 syntax. [Here](https://github.com/eremina-offic
 
 The quotes are fetched from a REST API.
 
-**Technologies used**: HTML, CSS, jQuery, Ajax, RWD, Gulp.
+**Technologies used**: HTML, CSS, jQuery, Ajax, RWD, Webpack.
