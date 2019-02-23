@@ -6,7 +6,7 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   z-index: 3;
 }
@@ -38,7 +38,7 @@
   position: relative;
   width: 90vw;
   max-width: 900px;
-  max-height: 40vh;
+  max-height: 30vh;
   overflow: auto;
   border: 1px solid gray;
   border-radius: 6px;
@@ -85,6 +85,14 @@
 div#options div.active {
   color: #cccccc;
   background-color: rgba( 0, 0, 0, .9 );
+}
+@media only screen and (min-height: 400px) {
+  #proverb-container {
+    justify-content: center;
+  }
+  #proverb.largefont {
+    font-size: 2em;
+  }
 }
 @media only screen and (min-height: 600px) {
   #proverb.largefont {
