@@ -1,4 +1,4 @@
-#proverb-container {
+.proverb-container {
   position: fixed;
   top: 0;
   left: 0;
@@ -10,7 +10,7 @@
   align-items: center;
   z-index: 3;
 }
-#options {
+.options {
   display: flex;
   justify-content: space-around;
   width: 90vw;
@@ -19,7 +19,7 @@
   position: relative;
   z-index: 4;
 }
-#show-quotes, #show-proverbs {
+.options__quotes, .options__proverbs {
   position: relative;
   border: 1px solid gray;
   border-radius: 6px;
@@ -29,12 +29,12 @@
   cursor: pointer;
   z-index: 4;
 }
-#show-quotes:hover, #show-proverbs:hover,
-#next:hover, #next-quote:hover {
+.options__quotes:hover, .options__proverbs:hover,
+.next-proverb:hover, .next-quote:hover {
   color: #cccccc;
   background-color: rgba( 0, 0, 0, .9 );
 }
-#proverb-quote {
+.proverb-quote {
   position: relative;
   width: 90vw;
   max-width: 900px;
@@ -47,28 +47,28 @@
   padding: 10px;
   z-index: 4;
 }
-#proverb {
+.proverb-quote-content {
   position: relative;
   text-align: center;
   font-size: 1em;
   z-index: 4;
 }
-#proverb p {
+.proverb-quote-content p {
   margin-top: 0;
   margin-bottom: 6px;
   margin-block-start: 0;
   margin-block-end: 6px;
 }
-#proverb.largefont {
+.proverb-quote-content.largefont {
   font-size: 1.2em;
 }
-#author {
+.author {
   position: relative;
   text-align: right;
   margin-left: auto;
   z-index: 4;
 }
-#next, #next-quote {
+.next-proverb, .next-quote {
   position: relative;
   border: 1px solid gray;
   border-radius: 6px;
@@ -79,23 +79,23 @@
   cursor: pointer;
   z-index: 99;
 }
-#next-quote {
+.is-not-active {
   display: none;
 }
-div#options div.active {
+div.options div.active {
   color: #cccccc;
   background-color: rgba( 0, 0, 0, .9 );
 }
 @media only screen and (min-height: 400px) {
-  #proverb-container {
+  .proverb-container {
     justify-content: center;
   }
-  #options {
+  .options {
     margin-top: 0;
   }
 }
 @media only screen and (min-height: 600px) {
-  #proverb.largefont {
+  .proverb-quote-content.largefont {
     font-size: 2em;
   }
 }

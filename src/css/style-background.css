@@ -1,4 +1,4 @@
-#background {
+.background {
   position: fixed;
   top: 0;
   left: 0;
@@ -7,11 +7,16 @@
   z-index: 1;
 }
 
-#image {
+.image {
   position: relative;
   object-fit: cover;
   width: 100vw;
   height: 100vh;
-  display: none;
+  opacity: 0;
+  transition: opacity 1s ease;
   z-index: 2;
+}
+
+.image-is-visible {
+  opacity: 1;
 }
