@@ -6,28 +6,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="description" content="Proverbs" />
 
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script src="dist/bundle.js" defer></script>
+<link rel="stylesheet" href="src/css/stylesheet.css"/>
+<link rel="stylesheet" href="src/css/style-background.css"/>
+<link rel="stylesheet" href="src/css/style-proverb.css"/>
+<script src="src/js/background.js" type="module"></script>
+<script src="src/js/proverb.js" type="module"></script>
+<script src="src/js/quote.js" type="module"></script>
+
+<!-- <script src="dist/bundle.js" defer></script> -->
 
 </head>
 
 <body>
-  <div id="background">
-    <img id="image" src="" alt="background-image">
+  <div class="background">
+    <img class="image js-image" src="" alt="background-image">
   </div>
-  <div id="proverb-container">
-    <div id="options">
-      <div id="show-quotes">Show quotes</div>
-      <div id="show-proverbs" class="active">Show proverbs</div>
+  <div class="proverb-container">
+    <div class="options">
+      <div class="options__quotes js-show-quotes">Show quotes</div>
+      <div class="options__proverbs js-show-proverbs active">Show proverbs</div>
     </div>
-    <div id="proverb-quote">
-      <div id="proverb" class="largefont"></div>
-      <div id="author"></div>
+    <div class="proverb-quote">
+      <div class="proverb-quote-content largefont js-proverb-quote"></div>
+      <div class="author js-author"></div>
     </div>
-    <div id="next-quote">Next quote</div>
-    <div id="next">Next proverb</div>
+    <div class="next-quote is-not-active js-next-quote">Next quote</div>
+    <div class="next-proverb js-next-proverb">Next proverb</div>
   </div>
-  <div id="credits">
+  <div class="credits">
     <p>Photos from <a href="https://unsplash.com/">Unsplash</a></p>
     <p>Quotes from <a href="https://quotesondesign.com/api-v4-0/">Quotes on Design</a> API</p>
   </div>
