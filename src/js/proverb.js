@@ -49,8 +49,8 @@ function goToProverb() {
   proverbQuoteContent.classList.add('largefont');
   showQuotesButton.classList.remove('active');
   showProverbsButton.classList.add('active');
-  nextQuote.classList.add('is-not-active');
-  nextProverb.classList.remove('is-not-active');
+  nextQuoteButton.classList.add('is-not-active');
+  nextProverbButton.classList.remove('is-not-active');
   showProverb();
   loadNextImage();
 }
