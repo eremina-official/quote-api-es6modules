@@ -1,4 +1,4 @@
-/* import '../css/style-background.css'; */
+import '../css/style-background.css';
 
 //cache DOM, declare variables
 const image = document.querySelector('.js-image');
