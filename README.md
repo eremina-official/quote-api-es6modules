@@ -2,8 +2,8 @@ A project similar to that described in [Writing Modular JavaScript](https://medi
 
 A web application that displays a random quote or a proverb on a random background image. The application is organized according to modular design pattern, each module controls one app feature.
 
-The modules are written with ES6 syntax. [Here](https://github.com/eremina-official/quote-proverb-app) is the same project written using revealing module pattern approach as described in the original publication.
+The modules are written with vanilla JavaScript and ES6 syntax. [Here](https://github.com/eremina-official/quote-proverb-app) is the same project written using jQuery and revealing module pattern approach as described in the original publication.
 
 The quotes are fetched from a REST API.
 
-**Technologies used**: HTML, CSS, jQuery, Ajax, RWD, Webpack.
+**Technologies used**: HTML, CSS, JavaScript, Ajax, RWD, Webpack.
