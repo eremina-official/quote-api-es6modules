@@ -24,6 +24,7 @@ const proverbArray = [
   'Don\'t burn your bridges behind you'
 ];
 
+let currentProverbIndex = 0;
 const lastProverbIndex = proverbArray.length - 1;
 
 //bind events
@@ -36,10 +37,8 @@ function showProverb() {
 }
 
 function showNextProverb() {
-  const currentProverb = proverbQuoteContent.textContent;
-  const currentIndex = proverbArray.indexOf(currentProverb);
-  const indexToShow = (currentIndex === lastProverbIndex) ? 0 : currentIndex + 1;
-  proverbQuoteContent.textContent = proverbArray[indexToShow];
+  currentProverbIndex = (currentProverbIndex === lastProverbIndex) ? 0 : currentProverbIndex + 1;
+  proverbQuoteContent.textContent = proverbArray[currentProverbIndex];
   loadNextImage();
 }
 
@@ -51,7 +50,7 @@ function goToProverb() {
   showProverbsButton.classList.add('active');
   nextQuoteButton.classList.add('is-not-active');
   nextProverbButton.classList.remove('is-not-active');
-  showProverb();
+  showNextProverb();
   loadNextImage();
 }
 
