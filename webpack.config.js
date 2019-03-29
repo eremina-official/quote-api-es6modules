@@ -1,3 +1,5 @@
+/* quote-api-es6modules app */
+
 const path = require('path');
 
 module.exports = {
