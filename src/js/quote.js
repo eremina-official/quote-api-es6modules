@@ -1,8 +1,12 @@
 import { loadNextImage } from './background.js';
-import { showQuotesButton, showProverbsButton, proverbQuoteContent, author, 
-  nextQuoteButton, nextProverbButton } from './proverb.js';
+import { showQuotesButton, showProverbsButton } from './proverb.js';
 
-//declare variables
+//cache DOM, declare variables
+const proverbWrapper = document.querySelector('.proverb-container__proverb');
+const quoteWrapper = document.querySelector('.proverb-container__quote');
+const quoteContent = document.querySelector('.js-quote-content');
+const author = document.querySelector('.js-author');
+const nextQuoteButton = document.querySelector('.js-next-quote');
 let uniqueUrl = 1;
 
 //bind events
@@ -18,16 +22,18 @@ function callAjax() {
   httpRequest.onload = function() {
     if (httpRequest.status >= 200 && httpRequest.status < 400) {
       const quote = JSON.parse(httpRequest.responseText);
-      proverbQuoteContent.innerHTML = quote[0].content;
+      quoteContent.innerHTML = quote[0].content;
       author.textContent = quote[0].title;
     } else {
       /* handle server connection error */
-      proverbQuoteContent.textContent = 'Server returned an error';
+      quoteContent.textContent = 'Server returned an error';
+      author.textContent = '';
     }
   };
   /* handle internet connection error */
   httpRequest.onerror = function() {
-    proverbQuoteContent.textContent = 'Connection error';
+    quoteContent.textContent = 'Connection error';
+    author.textContent = '';
   };
 
   httpRequest.send();
@@ -35,13 +41,13 @@ function callAjax() {
 }
 
 function showQuotes() {
-  proverbQuoteContent.textContent = '';
-  proverbQuoteContent.classList.remove('largefont');
-  showProverbsButton.classList.remove('active');
-  showQuotesButton.classList.add('active');
-  nextProverbButton.classList.add('is-not-active');
-  nextQuoteButton.classList.remove('is-not-active');
-  showNextQuote();
+  if (quoteWrapper.classList.contains('is-not-active')) {
+    proverbWrapper.classList.add('is-not-active');
+    quoteWrapper.classList.remove('is-not-active');
+    showProverbsButton.classList.remove('active');
+    showQuotesButton.classList.add('active');
+    showNextQuote();
+  }
 }
 
 function showNextQuote() {
