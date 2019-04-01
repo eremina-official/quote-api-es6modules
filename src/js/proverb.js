@@ -3,9 +3,9 @@ import { loadNextImage } from './background.js';
 //cache DOM, declare variables
 const showQuotesButton = document.querySelector('.js-show-quotes');
 const showProverbsButton = document.querySelector('.js-show-proverbs');
-const proverbQuoteContent = document.querySelector('.js-proverb-quote');
-const author = document.querySelector('.js-author');
-const nextQuoteButton = document.querySelector('.js-next-quote');
+const proverbWrapper = document.querySelector('.proverb-container__proverb');
+const quoteWrapper = document.querySelector('.proverb-container__quote');
+const proverbContent = document.querySelector('.js-proverb-content');
 const nextProverbButton = document.querySelector('.js-next-proverb');
 
 const proverbArray = [
@@ -33,28 +33,26 @@ nextProverbButton.addEventListener('click', showNextProverb);
 
 //function declarations
 function showProverb() {
-  proverbQuoteContent.textContent = proverbArray[0];
+  proverbContent.textContent = proverbArray[0];
 }
 
 function showNextProverb() {
   currentProverbIndex = (currentProverbIndex === lastProverbIndex) ? 0 : currentProverbIndex + 1;
-  proverbQuoteContent.textContent = proverbArray[currentProverbIndex];
+  proverbContent.textContent = proverbArray[currentProverbIndex];
   loadNextImage();
 }
 
 function goToProverb() {
-  proverbQuoteContent.textContent = '';
-  author.textContent = '';
-  proverbQuoteContent.classList.add('largefont');
-  showQuotesButton.classList.remove('active');
-  showProverbsButton.classList.add('active');
-  nextQuoteButton.classList.add('is-not-active');
-  nextProverbButton.classList.remove('is-not-active');
-  showNextProverb();
-  loadNextImage();
+  if (proverbWrapper.classList.contains('is-not-active')) {
+    quoteWrapper.classList.add('is-not-active');
+    proverbWrapper.classList.remove('is-not-active');
+    showQuotesButton.classList.remove('active');
+    showProverbsButton.classList.add('active');
+    showNextProverb();
+  }
 }
 
 //functions called on page load
 showProverb();
 
-export { showQuotesButton, showProverbsButton, proverbQuoteContent, author, nextQuoteButton, nextProverbButton };
+export { showQuotesButton, showProverbsButton };
