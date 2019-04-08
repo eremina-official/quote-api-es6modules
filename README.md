@@ -6,4 +6,10 @@ The app is written with vanilla JavaScript and ES6 modules. [Here](https://githu
 
 The quotes are fetched from a REST API.
 
-**Technologies:** HTML, CSS, JavaScript, Ajax, RWD, Webpack.
+### Technologies:
+- HTML
+- CSS
+- JavaScript
+- Ajax
+- RWD
+- Webpack
