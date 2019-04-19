@@ -23,8 +23,5 @@ function loadNextImage() {
   image.setAttribute('src', '');
   loadImage();
 }
-
-//functions called on page load
-loadImage();
     
-export { loadNextImage };
+export { loadImage, loadNextImage };

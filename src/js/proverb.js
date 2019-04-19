@@ -52,7 +52,4 @@ function goToProverb() {
   }
 }
 
-//functions called on page load
-showProverb();
-
-export { showQuotesButton, showProverbsButton };
+export { showProverb, showQuotesButton, showProverbsButton };
