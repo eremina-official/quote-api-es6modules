@@ -6,7 +6,7 @@ import '../css/style-proverb.css';
 import { loadImage } from './background.js';
 import { showProverb } from './proverb.js';
 
-window.addEventListener('load', init);
+document.addEventListener('DOMContentLoaded', init);
 
 function init() {
   showLoader();
