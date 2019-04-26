@@ -17,6 +17,8 @@ function init() {
 function showLoader() {
   setTimeout(() => {
     const loader = document.querySelector('.js-loader');
-    loader.classList.add('loader-is-hidden');
+    const main = document.querySelector('main');
+    loader.classList.add('is-hidden');
+    main.classList.remove('is-hidden');
   }, 1000);
 }
