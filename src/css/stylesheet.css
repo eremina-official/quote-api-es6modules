@@ -27,10 +27,6 @@ body {
   color: gray;
 }
 
-.loader-is-hidden {
-  display: none;
-}
-
 .credits {
   position: fixed;
   left: 0;
