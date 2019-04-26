@@ -22,6 +22,10 @@ body {
   z-index: 99;
 }
 
+div.loader.is-hidden {
+  display: none;
+}
+
 .loader p {
   font-size: 2em;
   color: gray;
